@@ -30,7 +30,7 @@
       <muleVersion>${app.runtime}</muleVersion>
       <username>${anypoint.username}</username>
       <password>${anypoint.password}</password>
-      <applicationName>${cloudhub.myapp}</applicationName>
+      <applicationName>muleandgithub</applicationName>
       <environment>Sandbox</environment>
       <region>us-east-2</region>
       <workers>1</workers>
