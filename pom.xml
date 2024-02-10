@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
-	<artifactId>0f9ea708571a4f048f0ea1af7943e41c</artifactId>
-	<version>1.0.0</version>
+	<artifactId>oa</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 	<name>oauthProvider</name>
 	<properties>
@@ -20,14 +20,28 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<classifier>---- select project type ----</classifier>
-				</configuration>
-			</plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>3.7.1</version>
+  <extensions>true</extensions>
+  <configuration>
+    <cloudHubDeployment>
+      <uri>https://anypoint.mulesoft.com</uri>
+      <muleVersion>${app.runtime}</muleVersion>
+      <username>${username}</username>
+      <password>${password}</password>
+      <applicationName>myoauthapp</applicationName>
+      <environment>Sandbox</environment>
+      <region>us-east-2</region>
+      <workers>1</workers>
+      <workerType>MICRO</workerType>
+      <objectStoreV2>true</objectStoreV2>
+      <properties>
+        <secureProperties>value</secureProperties>
+      </properties>
+    </cloudHubDeployment>
+  </configuration>
+</plugin>
 		</plugins>
 	</build>
 	<dependencies>

@@ -8,5 +8,5 @@ anypoint:
   username: "DevelopeApp"
   password: "LearnMule2024"
   
-app:
-  name: "oauthprovider"
+applicationName:
+  name: "mulemaven"
