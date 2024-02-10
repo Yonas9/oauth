@@ -5,8 +5,8 @@ http:
   path2: "/validate"
   
 anypoint:
-  username: "SelfLearn"
-  password: "LearnMule#2023"
+  username: "DevelopeApp"
+  password: "LearnMule2024"
   
 app:
   name: "oauthprovider"
