@@ -4,9 +4,7 @@ http:
   path1: "/client"
   path2: "/validate"
   
-anypoint:
-  username: "DevelopeApp"
-  password: "LearnMule2024"
-  
-applicationName:
-  name: "mulemaven"
+cloudhub:
+  username: DevelopeApp
+  password: LearnMule2024
+  myapp: "mulemaven"
