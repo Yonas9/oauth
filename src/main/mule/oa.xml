@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:os="http://www.mulesoft.org/schema/mule/os" xmlns:oauth2-provider="http://www.mulesoft.org/schema/mule/oauth2-provider"
+	xmlns:oauth="http://www.mulesoft.org/schema/mule/oauth"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/oauth http://www.mulesoft.org/schema/mule/oauth/current/mule-oauth.xsd
+http://www.mulesoft.org/schema/mule/oauth2-provider http://www.mulesoft.org/schema/mule/oauth2-provider/current/mule-oauth2-provider.xsd
+http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd">
+	
+	
+	<flow name="oaFlow" doc:id="579a36d1-f2ea-4da3-93e4-7e7fb1c5d6a9" >
+		<http:listener doc:name="Listener" doc:id="619a22dd-7b1a-4966-936c-49897c3ba360" config-ref="HTTP_Listener_config" path="${http.path1}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="00e1e0b7-71cf-495e-b78b-5466574c7c43" message="start"/>
+		<oauth2-provider:create-client doc:name="Create client" doc:id="305014d6-ea50-4410-96c4-7efc6e021c03" config-ref="OAuth2_Provider_Config" clientId="#[attributes.headers.client_id]" secret="#[attributes.headers.client_secret]" clientName="#[attributes.headers.client_name]" redirectUris='#[["xyz.in"]]' authorizedGrantTypes='#[["CLIENT_CREDENTIALS"]]' type="CONFIDENTIAL"/>
+		<set-payload value="client created successfuly" doc:name="Set Payload" doc:id="61bb27e0-de61-46de-9d5f-5da0f7970f79" />
+		<logger level="INFO" doc:name="Logger" doc:id="9c767b4a-9f96-4391-894f-645d6fe6b97f" message="END"/>
+	</flow>
+	<flow name="oaFlow1" doc:id="ae2a843e-acd7-434d-b3fe-c33eabc72d25" >
+		<http:listener doc:name="Listener" doc:id="2b70f77c-7db3-417b-9406-075c4af4fb4f" config-ref="HTTP_Listener_config" path="${http.path2}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="6cf8cd6f-8665-489f-a0c7-492d903ee120" />
+		<oauth2-provider:validate-token doc:name="Validate token" doc:id="eda67613-ab2e-4180-bd08-409e42d452c5" config-ref="OAuth2_Provider_Config"/>
+		<logger level="INFO" doc:name="Logger" doc:id="9b71d50f-0a50-4dd5-bb56-d57d9bd14d4a" message="END"/>
+	</flow>
+</mule>
