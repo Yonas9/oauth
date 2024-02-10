@@ -1,0 +1,12 @@
+http:
+  host: "0.0.0.0"
+  port: "8081"
+  path1: "/client"
+  path2: "/validate"
+  
+anypoint:
+  username: "DevelopeApp"
+  password: "LearnMule2024"
+  
+app:
+  name: "oauthprovider"
