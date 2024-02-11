@@ -21,7 +21,6 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 	</os:config>
 	<configuration-properties doc:name="Configuration properties" doc:id="14e9226d-c020-40ad-b9c9-39c0b83cbd51" file="${env}.yaml" />
 	<global-property doc:name="Global Property" doc:id="73bfa84e-df96-4bb3-a466-87f8a7162e55" name="env" value="local" />
-	<api-gateway:autodiscovery apiId="19294403" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="057ead91-89ad-4167-98aa-ed163a21550e" flowRef="oaFlow" />
 	
 	
 </mule>
