@@ -4,7 +4,7 @@ http:
   path1: "/client"
   path2: "/validate"
   
-cloudhub:
+cloudhub0f9ea708571a4f048f0ea1af7943e41c0f9ea708571a4f048f0ea1af7943e41c0f9ea708571a4f048f0ea1af7943e41c:
   username: DevelopeApp
   password: LearnMule2024
   myapp: "mulemaven"
