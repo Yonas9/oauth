@@ -39,7 +39,7 @@
 						<properties>
 							<env>dev</env>
 						</properties>
-						  <deploymentTimeout>120000 </deploymentTimeout>>
+						  <deploymentTimeout>1800000 </deploymentTimeout>>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
